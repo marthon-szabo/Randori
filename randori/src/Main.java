@@ -17,15 +17,23 @@ public class Main {
     public static void main(String[] args) {
         List<String> x = new ArrayList<>();
 
-        ArrayList<String> sentence = Arrays.asList(words[1].split("\\W+"));
+
 
         for (int i = 0; i < words.length; i++) {
             /*for (int j = 0; j < i.length(); j++) {
 
             }*/
-
-
-
+            ArrayList<String> sentence = (ArrayList<String>) Arrays.asList(words[i].split("\\W+"));
+            for (int j = 0; j < sentence.size(); j++) {
+                for (int k = j + 1; k < sentence.size(); k++) {
+                    if (sentence.get(j).equals(sentence.get(k))) {
+                        sentence.remove(sentence.get(k));
+                    }
+                }
+            }
+        }
+        for (String s: words) {
+            System.out.println(s);
         }
 
 
