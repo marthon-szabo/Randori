@@ -17,12 +17,29 @@ public class Main {
     public static void main(String[] args) {
         List<String> x = new ArrayList<>();
 
-        for (int i = 1; i < words.length; i++) {
-            for (int j = 0; j < i.length(); j++) {
+        ArrayList<String> sentence = Arrays.asList(words[1].split("\\W+"));
 
-            }
+        for (int i = 0; i < words.length; i++) {
+            /*for (int j = 0; j < i.length(); j++) {
+
+            }*/
+
+
+
         }
 
+
+/*        String[] x = text.split("\\W+");
+
+        System.out.println("=======================");
+        for (int i = 0; i < x.length; i = i+2) {
+            //if (i % 2 == 1) System.out.println(x[i]);
+            System.out.printf("%s               %03d %n", x[i], Integer.parseInt(x[i+1]));
+
+        }
+        System.out.println("=======================");
+
+        System.out.println(Arrays.toString(x));*/
 
     }
 }
