@@ -5,12 +5,13 @@ import java.util.List;
 public class Main {
 
     public static String text = "java 100\ncpp 65\npython 50";
-    public static String[] words = {"5","Goodbye bye bye world world world",
+    public static String[] words = {"5", "Goodbye bye bye world world world",
             "Sam went went to to to his business",
             "Reya is is the the best player in eye eye game",
             "in inthe",
             "Hello hello Ab aB"};
-    public static void listBuilder(String text){
+
+    public static void listBuilder(String text) {
 
     }
 
@@ -18,22 +19,24 @@ public class Main {
         List<String> x = new ArrayList<>();
 
 
-
         for (int i = 0; i < words.length; i++) {
             /*for (int j = 0; j < i.length(); j++) {
 
             }*/
-            ArrayList<String> sentence = (ArrayList<String>) Arrays.asList(words[i].split("\\W+"));
+            ArrayList<String> sentence = new ArrayList<>(Arrays.asList(words[i].split("\\W+")));
             for (int j = 0; j < sentence.size(); j++) {
-                for (int k = j + 1; k < sentence.size(); k++) {
+                int k = j+1;
+                while(sentence.get(j).equals(sentence.get(k))){
+                    sentence.remove(sentence.get(k));
+                }
+
+            /*    for (int k = j + 1; k < sentence.size(); k++) {
                     if (sentence.get(j).equals(sentence.get(k))) {
                         sentence.remove(sentence.get(k));
                     }
-                }
+                }*/
             }
-        }
-        for (String s: words) {
-            System.out.println(s);
+            System.out.println(sentence);
         }
 
 
